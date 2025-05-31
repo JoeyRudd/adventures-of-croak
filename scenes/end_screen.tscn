@@ -1,0 +1,84 @@
+[gd_scene load_steps=8 format=3 uid="uid://ctcbm2kxaaaof"]
+
+[ext_resource type="Script" path="res://scripts/end_screen.gd" id="1_0ygn6"]
+[ext_resource type="Texture2D" uid="uid://dy8werpjo2kcj" path="res://scenes/Screenshot 2024-11-29 at 10.49.09 AM.png" id="2_43s14"]
+[ext_resource type="FontFile" uid="uid://bnevbw816l8p" path="res://assets/Fonts/ThaleahFat.ttf" id="2_t18aj"]
+[ext_resource type="StyleBox" uid="uid://bnbcio66ani70" path="res://assets/Fonts/pause_menu_button.tres" id="3_5rjf5"]
+
+[sub_resource type="Theme" id="Theme_o2yuh"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b86xm"]
+texture = ExtResource("2_43s14")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s6hoo"]
+bg_color = Color(0.34902, 0.6, 0.6, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.0687983, 0.0687983, 0.0687982, 1)
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[node name="End Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0ygn6")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1155.0
+offset_bottom = 651.0
+theme = SubResource("Theme_o2yuh")
+theme_override_styles/panel = SubResource("StyleBoxTexture_b86xm")
+
+[node name="Grade" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -56.5
+offset_top = 129.0
+offset_right = 56.5
+offset_bottom = 152.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_t18aj")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_s6hoo")
+text = "Your Score is..."
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.5
+offset_top = -20.0
+offset_right = 45.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Play Again" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_t18aj")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = ExtResource("3_5rjf5")
+theme_override_styles/normal_mirrored = ExtResource("3_5rjf5")
+theme_override_styles/normal = ExtResource("3_5rjf5")
+text = "Play Again
+"
+
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="pressed" from="VBoxContainer/Play Again" to="." method="_on_play_again_pressed"]

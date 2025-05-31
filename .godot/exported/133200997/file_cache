@@ -1,0 +1,16 @@
+res://assets/Fonts/count.tres::eeb0529ca097e9a2f8dfe9d1976f0742::1732505334::res://.godot/exported/133200997/export-0c59112ae27ce7cc7a25883e85f553ce-count.res
+res://assets/Fonts/pause_menu_button.tres::3ae187c3fc21acb780c6613fcbe713a4::1733259666::res://.godot/exported/133200997/export-411ea916177459e7f4e19f87c1388ad8-pause_menu_button.res
+res://scenes/bee.tscn::5d3bc967fa576d75708987b022d5600a::1733010043::res://.godot/exported/133200997/export-37e65ce878212b782ae01ee1a9246002-bee.scn
+res://scenes/double_jump.tscn::14cf4d840fcce54ec7f3d4fc5788fb31::1733260026::res://.godot/exported/133200997/export-5887b9fc6cb9b32ff14f28edcd000145-double_jump.scn
+res://scenes/dragon_fly.tscn::ed192406df852e6c9637557732cd24b8::1733260026::res://.godot/exported/133200997/export-1ca19a38901f248a900459bf5415f82e-dragon_fly.scn
+res://scenes/end_screen.tscn::a4393d517c64c0267089c2efecb41bf2::1733010043::res://.godot/exported/133200997/export-06178169d42c94042436e74e8c7a4695-end_screen.scn
+res://scenes/flag.tscn::fbafe8581ae9ec6f5fcc9de88077a1c4::1733260026::res://.godot/exported/133200997/export-ed01e640138f262d3a3519429431a67d-flag.scn
+res://scenes/frog.tscn::252ceadcc6fb4fe86a03c8b80f3b3a6f::1733260026::res://.godot/exported/133200997/export-1a24b8cb8cb53ad6b2d88e5aebe398d3-frog.scn
+res://scenes/game.tscn::3dee13c7b3b1a7cd9ce08ec2c9bd117f::1733260079::res://.godot/exported/133200997/export-c2a7af834e91ff64325daddf58e45dc0-game.scn
+res://scenes/killzone.tscn::ea609dfb55451f3236332d7623a1b0a7::1732293501::res://.godot/exported/133200997/export-494bf1445653c44a49a39c8f8b1ce8d0-killzone.scn
+res://scenes/main_menu.tscn::646e758dd06f0a6d3d934c13c684e431::1733010043::res://.godot/exported/133200997/export-ea5c6ad4629af728dc514cefde332394-main_menu.scn
+res://scenes/music.tscn::c4c16988c621ee1bb6cac7bacc60ea56::1731685558::res://.godot/exported/133200997/export-bfd8027ae1117ff610be6f2619a76089-music.scn
+res://scenes/pause_menu.tscn::d0a7a7fdff2f51714ac41132e4a513e4::1732202488::res://.godot/exported/133200997/export-ca2c2284eb591e72162d67219a0d2f87-pause_menu.scn
+res://scenes/rock_head.tscn::40510799bd82af6605679038f721f628::1733010043::res://.godot/exported/133200997/export-e7d2c854e1e52072e98c394c6bbf3ffe-rock_head.scn
+res://scenes/spike.tscn::50bbdb3758682fe8be24827e2f9ea0ef::1731884943::res://.godot/exported/133200997/export-9f66bc2a5b738b9ace7cde5821527d98-spike.scn
+res://default_bus_layout.tres::29b1cee0eba792910b857be367869dcb::1731621695::res://.godot/exported/133200997/export-19246414aa9fb561ced4b8dce477acec-default_bus_layout.res

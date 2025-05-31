@@ -1,0 +1,94 @@
+[gd_scene load_steps=7 format=3 uid="uid://tih3cqnfb15h"]
+
+[ext_resource type="Texture2D" uid="uid://dbe8p6f3knoy6" path="res://assets/Background/start_screen.png" id="1_27io5"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_480gq"]
+[ext_resource type="FontFile" uid="uid://bnevbw816l8p" path="res://assets/Fonts/ThaleahFat.ttf" id="3_o8mdo"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1lgki"]
+texture = ExtResource("1_27io5")
+modulate_color = Color(0.733005, 0.733005, 0.733005, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xtaae"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.45)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5bybl"]
+line_spacing = 0.0
+font = ExtResource("3_o8mdo")
+font_size = 50
+outline_size = 20
+outline_color = Color(0.0807833, 0.0807833, 0.0807833, 1)
+
+[node name="Main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_480gq")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_1lgki")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -156.5
+offset_top = -48.0
+offset_right = 156.5
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_o8mdo")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_xtaae")
+text = "Start Game"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_o8mdo")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_xtaae")
+text = "Exit
+"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -123.5
+offset_top = 128.0
+offset_right = 123.5
+offset_bottom = 269.0
+grow_horizontal = 2
+text = "Adventures
+ of
+ Croak"
+label_settings = SubResource("LabelSettings_5bybl")
+horizontal_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_exit_pressed"]

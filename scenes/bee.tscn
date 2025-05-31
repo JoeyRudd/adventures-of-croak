@@ -1,0 +1,95 @@
+[gd_scene load_steps=13 format=3 uid="uid://cglalukqjyad3"]
+
+[ext_resource type="Script" path="res://scripts/bee.gd" id="1_77jk1"]
+[ext_resource type="Texture2D" uid="uid://dnmjg0tvd8fro" path="res://assets/Enemies/Bee/Idle (36x34).png" id="1_k1bqy"]
+[ext_resource type="AudioStream" uid="uid://c74tt0ftpp7v" path="res://assets/sounds/hurt.wav" id="2_s0baa"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uubik"]
+radius = 14.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_netnh"]
+atlas = ExtResource("1_k1bqy")
+region = Rect2(0, 0, 36, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sdmnr"]
+atlas = ExtResource("1_k1bqy")
+region = Rect2(36, 0, 36, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4v5e"]
+atlas = ExtResource("1_k1bqy")
+region = Rect2(72, 0, 36, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnhnk"]
+atlas = ExtResource("1_k1bqy")
+region = Rect2(108, 0, 36, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o4ley"]
+atlas = ExtResource("1_k1bqy")
+region = Rect2(144, 0, 36, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0qrhw"]
+atlas = ExtResource("1_k1bqy")
+region = Rect2(180, 0, 36, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nr2wq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_netnh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sdmnr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g4v5e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xnhnk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o4ley")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0qrhw")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 20.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4ugt7"]
+radius = 16.0
+height = 32.0
+
+[node name="RigidBody2D" type="RigidBody2D"]
+collision_layer = 3
+collision_mask = 3
+gravity_scale = 0.0
+script = ExtResource("1_77jk1")
+
+[node name="Death" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="Hurt" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_s0baa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_uubik")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_nr2wq")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.870602
+
+[node name="Bee2" type="Area2D" parent="."]
+position = Vector2(9, -17)
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bee2"]
+position = Vector2(-9, 17)
+shape = SubResource("CapsuleShape2D_4ugt7")
+
+[connection signal="timeout" from="Death" to="." method="_on_death_timeout"]
+[connection signal="body_entered" from="Bee2" to="." method="_on_bee_body_entered"]
